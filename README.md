@@ -2,3 +2,10 @@
 
 # Mantle Content Blocks
 This is a set of web components built using Stencil.
+
+# How to Install
+
+```
+<script type="module" src="https://cdn.jsdelivr.net/gh/shahruk/blue-content-blocks@latest/dist/content-blocks/content-blocks.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/gh/shahruk/blue-content-blocks@latest/dist/content-blocks/content-blocks.js"></script>
+```

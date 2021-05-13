@@ -1,0 +1,20 @@
+content-image {
+  display: block;
+  height: auto;
+
+  .content-image {
+    opacity: 0;
+    &.content-image-loaded {
+      opacity: 1;
+    }
+    img,
+    picture,
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+}
+

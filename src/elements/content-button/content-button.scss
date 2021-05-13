@@ -1,0 +1,43 @@
+content-button {
+  display: inline-block;
+  
+  &[clickable-block="true"] {
+    display: block;
+    width: 100%;
+    > content-element-wrapper {
+      height: 100%;
+      width: 100%;
+      > .content-button {
+        height: 100%;
+        width: 100%;
+        > a,
+        > button {
+          height: 100%;
+          width: 100%;
+          > * {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .content-button__clickable-content {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .content-button {
+    > a, > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    > button {
+      appearance: none;
+      background: inherit;
+      cursor: pointer;
+    }
+  }
+
+}

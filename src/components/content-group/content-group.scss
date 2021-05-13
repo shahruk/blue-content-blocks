@@ -1,0 +1,30 @@
+content-group {
+  display: block;
+}
+.content-group__content {
+  display: flex;
+  > * {
+    flex: 0 0 auto;
+  }
+}
+@mixin textAlignOptions {
+  &-left {
+    .content-group__content {
+      justify-content: flex-start;
+    }
+  }
+  &-center {
+    .content-group__content {
+      justify-content: center;
+    }
+  }
+  &-right {
+    .content-group__content {
+      justify-content: flex-end;
+    }
+  }
+}
+
+@include responsiveProperty('.content-group-align') {
+  @include textAlignOptions;
+}

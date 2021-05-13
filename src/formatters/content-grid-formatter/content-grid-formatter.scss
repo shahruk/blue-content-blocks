@@ -1,0 +1,59 @@
+@mixin columnNumberedRules {
+  @for $i from 1 to 10 {
+    &-#{$i} {
+      &.content-grid-formatter-grid {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      }
+      &.content-grid-formatter-flex > * {
+        flex: 0 0 auto;
+        width: calc(100%/#{$i});
+      }
+      &.content-grid-formatter-flex--shrink > * {
+        flex-shrink: 1;
+      }
+      &.content-grid-formatter-flex--grow > * {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+content-grid-formatter {
+  display: block;
+}
+.content-grid-formatter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  overflow: hidden;
+
+  > * {
+    overflow: hidden;
+  }
+}
+.content-grid-formatter-flex {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  flex-wrap: wrap;
+  &.content-grid-formatter-flex--flex-start {
+    justify-content: flex-start;
+  }
+  &.content-grid-formatter-flex--space-between {
+    justify-content: space-between;
+  }
+  &.content-grid-formatter-flex--center {
+    justify-content: center;
+  }
+  &.content-grid-formatter-flex--space-evenly {
+    justify-content: space-evenly;
+  }
+  [slot="column1"],
+  [slot="column2"] {
+    height: auto;
+  }
+}
+
+@include responsiveProperty('.content-grid-formatter-cols') {
+  @include columnNumberedRules;
+}

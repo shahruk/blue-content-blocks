@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "theme-stylesheet.css",
+	"sources": [
+		"../theme/stylesheet.scss",
+		"global/_variables.scss",
+		"global/_mixins.scss"
+	],
+	"sourcesContent": [
+		"@import \"../src/global/_variables.scss\";\n@import \"../src/global/_mixins.scss\";\nhtml, body {\n  font-family: \"Helvetica Neue\", \"Arial\", sans-serif;\n  @include scaledProperty(\"font-size\", 14px, 16px);\n}\n.text-style--eyebrow {\n  font-size: 11px;\n  text-transform: uppercase;\n}\n\n.text-style--title {\n  @include scaledProperty(\"font-size\", 18px, 24px, 32px);\n}\n\n.text-style--subtitle {\n  font-size: 16px;\n}\n\n.text-style--body {\n}\n\ncontent-block-wrapper {\n  @include scaledProperty(\"margin-bottom\", 10px, 15px, 25px);\n}",
+		"$mobile-only: \"screen and (max-width: 767px)\";\n$tablet-portrait-up: \"screen and (min-width: 768px)\";\n$tablet-portrait-down: \"screen and (max-width: 768px)\";\n\n$mobile-tablet-portrait-only: \"screen and (max-width: 1023px)\";\n$tablet-portrait-only: \"screen and (min-width: 768px) and (max-width: 1023px)\";\n$tablet-landscape-up: \"screen and (min-width: 1024px)\";\n$tablet-landscape-down: \"screen and (min-width: 1024px)\";\n\n$mobile-tablet-portrait-landscape-desktop-only: \"screen and (max-width: 1366px)\";\n$tablet-portrait-landscape-only: \"screen and (min-width: 768px) and (max-width: 1024px)\";\n$tablet-portrait-landscape-pro-only: \"screen and (min-width: 768px) and (max-width: 1366px)\";\n$tablet-landscape-pro-only: \"screen and (min-width: 1024px) and (max-width: 1366px)\";\n$tablet-landscape-pro-down: \"screen and (max-width: 1366px)\";\n$tablet-desktop-up: \"screen and (min-width: 1280px)\";\n\n$desktop-large-up: \"screen and (min-width: 1440px)\";\n$desktop-wide-up: \"screen and (min-width: 1920px)\";",
+		"@mixin scaledProperty($property, $mobile: null, $tabletPortrait: null, $tabletLandscape: null, $desktop: null, $desktopLarge: null, $desktopWide: null) {\n  @if $mobile {\n    #{$property}: $mobile;\n  }\n  @if $tabletPortrait {\n    @media #{$tablet-portrait-up} {\n      #{$property}: $tabletPortrait;\n    }\n  }\n  @if $tabletLandscape {\n    @media #{$tablet-landscape-up} {\n      #{$property}: $tabletLandscape;\n    }\n  }\n  @if desktop {\n    @media #{$tablet-desktop-up} {\n      #{$property}: $desktop;\n    }\n  }\n  @if $desktopLarge {\n    @media #{$desktop-large-up} {\n      #{$property}: $desktopLarge;\n    }\n  }\n  @if $desktopWide {\n    @media #{$desktop-wide-up} {\n      #{$property}: $desktopWide;\n    }\n  }\n}"
+	],
+	"names": [],
+	"mappings": "AAEA,AAAA,IAAI,EAAE,IAAI,CAAC;EACT,WAAW,EAAE,qCAAqC;EEDhD,SAAY,EFEuB,IAAI;CAC1C;;AEAG,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EFHvC,AAAA,IAAI,EAAE,IAAI,CAAC;IEIL,SAAY,EFF2B,IAAI;GAChD;;;AACD,AAAA,oBAAoB,CAAC;EACnB,SAAS,EAAE,IAAI;EACf,cAAc,EAAE,SAAS;CAC1B;;AAED,AAAA,kBAAkB,CAAC;EETf,SAAY,EFUuB,IAAI;CAC1C;;AERG,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EFMvC,AAAA,kBAAkB,CAAC;IELb,SAAY,EFM2B,IAAI;GAChD;;;AEHG,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM;EFCxC,AAAA,kBAAkB,CAAC;IEAb,SAAY,EFCiC,IAAI;GACtD;;;AAED,AAAA,qBAAqB,CAAC;EACpB,SAAS,EAAE,IAAI;CAChB;;AAKD,AAAA,qBAAqB,CAAC;EEpBlB,aAAY,EFqB2B,IAAI;CAC9C;;AEnBG,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EFiBvC,AAAA,qBAAqB,CAAC;IEhBhB,aAAY,EFiB+B,IAAI;GACpD;;;AEdG,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM;EFYxC,AAAA,qBAAqB,CAAC;IEXhB,aAAY,EFYqC,IAAI;GAC1D"
+}

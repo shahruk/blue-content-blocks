@@ -1,0 +1,44 @@
+content-spacing-wrapper {
+  display: block;
+  width: 100%;
+  height: auto;
+  > * {
+    height: 100%;
+  }
+  .content-spacing-wrapper__offsets,
+  .content-spacing-wrapper__alignments {
+    height: 100%;
+  }
+  &[full-height="true"] {
+    height: 100%;
+  }
+}
+.content-max-width {
+  @include allPercentRulesAllDevices('max-width');
+}
+.content-offset-left {
+  @include allPercentRulesAllDevices('padding-left');
+}
+.content-offset-right {
+  @include allPercentRulesAllDevices('padding-right');
+}
+.content-offset-top {
+  @include allPercentRulesAllDevices('padding-top');
+}
+.content-offset-bottom {
+  @include allPercentRulesAllDevices('padding-bottom');
+}
+
+.content-horizontal-alignment {
+  @include allMaxWidthRulesAllDevices;
+}
+
+@include responsiveProperty('.content-text-align') {
+  @include allTextAlignRules;
+}
+
+@include responsiveProperty('.content-full-height') {
+  &-true {
+    height: 100%;
+  }
+}

@@ -1,0 +1,25 @@
+@import "../src/global/_variables";
+@import "../src/global/_mixins";
+html, body {
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  @include scaledProperty("font-size", 14px, 16px);
+}
+.text-style--eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.text-style--title {
+  @include scaledProperty("font-size", 18px, 24px, 32px);
+}
+
+.text-style--subtitle {
+  font-size: 16px;
+}
+
+.text-style--body {
+}
+
+content-block-wrapper {
+  @include scaledProperty("margin-bottom", 10px, 15px, 25px);
+}

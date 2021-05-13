@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <meta name="description" content="Web components designed for building reusable modules for websites at scale." />
+    <title>Stencil Component Starter</title>
+    <script type="module" src="/build/content-blocks.esm.js"></script>
+    <script nomodule src="/build/content-blocks.js"></script>
+    <link rel="stylesheet" href="http://127.0.0.1:8081/dist/default-theme.css">
+
+  </head>
+  <body>
+    <content-split-block reverse="true" background="#333">
+      <content-image slot="column1" src="https://www.bobbibrowncosmetics.com/media/export/cms/Homepage/SS21/SS21_ReadyIn5_pc.jpg"></content-image>
+      <content-text-block slot="column2" background="red" theme="light" max-width="50|60|75" horizontal-alignment="left" vertical-alignment="center">
+        <content-line max-width="50" style-class="eyebrow">VIRTUAL ARTISTRY CONSULTATIONS</content-line>
+        <content-line style-class="title">1Ready in 5</content-line>
+        <content-line style-class="copy">Beauty is evolving, and so are we. Now you can book complimentary
+          one-on-one or group video sessions with a top Bobbi Brown artist for
+          makeup tips and tutorials tailored just to you.</content-line>
+        <content-group>
+          <content-button href="/book-now">Book Now</content-button>
+        </content-group>
+      </content-text-block>
+    </content-split-block>
+
+    <content-video src="https://www.w3schools.com/html/mov_bbb.mp4"></content-video>
+    
+    <content-accordion>
+      <button aria-expanded="true" aria-controls="faq1_desc">What do I do if I have a permit for an assigned lot, but can't find a space there?</button>
+      <p id="faq1_desc">
+        Park at the nearest available parking meter without paying the meter
+        and call 999-999-9999 to report the problem. We will note and approve your alternate
+        location and will investigate the cause of the shortage in your assigned facility.
+      </p>
+      <button aria-expanded="true" aria-controls="faq2">What do I do if I have a permit for an assigned lot, but can't find a space there?</button>
+      <p id="faq2">
+        Park at the nearest available parking meter without paying the meter
+        and call 999-999-9999 to report the problem. We will note and approve your alternate
+        location and will investigate the cause of the shortage in your assigned facility.
+      </p>
+      <button aria-expanded="true" aria-controls="faq3">What do I do if I have a permit for an assigned lot, but can't find a space there?</button>
+      <p id="faq3">
+        Park at the nearest available parking meter without paying the meter
+        and call 999-999-9999 to report the problem. We will note and approve your alternate
+        location and will investigate the cause of the shortage in your assigned facility.
+      </p>
+    </content-accordion>
+
+    <content-block-formatter>
+      <content-text-block slot="header">
+        <content-line style-class="title">Content Tabs</content-line>
+      </content-text-block>
+      <content-tabs slot="content">
+        <div role="tablist" aria-label={this.ariaLabel}>
+          <button role="tab" aria-selected="true" aria-controls="nils-tab" id="nils">Nils Frahm</button>
+          <button role="tab" aria-selected="false" aria-controls="agnes-tab" id="agnes" tabindex="-1">Agnes Obel</button>
+          <button role="tab" aria-selected="false" aria-controls="complexcomplex" id="complex" tabindex="-1" data-deletable="">Joke</button>
+        </div>
+
+        <div tabindex="0" role="tabpanel" id="nils-tab" aria-labelledby="nils">
+          <p>Nils Frahm is a German musician, composer and record producer based in Berlin. He is known for combining classical and electronic music and for an unconventional approach to the piano in which he mixes a grand piano, upright piano, Roland Juno-60, Rhodes piano, drum machine, and Moog Taurus.</p>
+        </div>
+
+        <div tabindex="0" role="tabpanel" id="agnes-tab" aria-labelledby="agnes" hidden>
+          <p>Agnes Caroline Thaarup Obel is a Danish singer/songwriter. Her first album, Philharmonics, was released by PIAS Recordings on 4 October 2010 in Europe. Philharmonics was certified gold in June 2011 by the Belgian Entertainment Association (BEA) for sales of 10,000 Copies.</p>
+        </div>
+
+        <div tabindex="0" role="tabpanel" id="complexcomplex" aria-labelledby="complex" hidden>
+          <p>Fear of complicated buildings:</p>
+          <p>A complex complex complex.</p>
+        </div>
+      </content-tabs>
+    </content-block-formatter>
+    <content-block-formatter>
+      <content-text-block slot="header">
+        <content-line style-class="title">Carousel</content-line>
+      </content-text-block>
+      <content-carousel slot="content" init-method="load" swiper-options='{"slidesPerView": 4.5, "slidesPerGroup": 1, "autoplay": true, "loop": true}'>
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <content-image alt="Test Alt Text" src="https://images.unsplash.com/photo-1606851683856-042dbdd2a2cc?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80"></content-image>
+        </div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 3</div>
+      </content-carousel>
+    </content-block-formatter>
+    <!-- <script>
+      setTimeout(function() {
+        const carouselElement = document.querySelector('content-carousel');
+        carouselElement.dispatchEvent(new CustomEvent('setSwiperOptions', {'detail': {
+          'autoplay': true
+        }}));
+      }, 1000);
+    </script> -->
+    <content-block-formatter>
+      <content-text-block slot="header">
+        <content-line style-class="title">Split Width Block</content-line>
+        <content-line>Split width blocks allows 2 content layers to be shown side by side and stacked on mobile devices.</content-line>
+      </content-text-block>
+
+      <content-split-block slot="content" reverse="true">
+        <content-image slot="column1" alt="Test Alt Text" src="https://images.unsplash.com/photo-1612873649383-edf91f1cf7fe?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80"></content-image>
+        <content-text-block slot="column2" text-align="center" horizontal-alignment="left">
+          <content-line style-class="eyebrow">EYEBROW</content-line>
+          <content-line style-class="header">HEADER</content-line>
+          <content-line style-class="subheader">Subtitle</content-line>
+          <content-line>
+            <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum. Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis.</p>
+          </content-line>
+          <content-group align="center">
+            <content-button href="google.com">Test Button</content-button>
+            <content-button>Test Button</content-button>
+          </content-group>
+        </content-text-block>
+      </content-split-block>
+    </content-block-formatter>
+
+    <content-block-formatter>
+      <content-text-block slot="header">
+        <content-line style-class="title">Hero Block V1</content-line>
+        <content-line>Hero Block V1</content-line>
+      </content-text-block>
+
+      <content-hero-block slot="content" horizontal-position="left" vertical-alignment="bottom">
+        <content-image slot="media" alt="Test Alt Text" src="https://images.unsplash.com/photo-1606851683856-042dbdd2a2cc?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80"></content-image>
+        <content-text-block slot="content" background="red" text-align="right">
+          <content-line style-class="eyebrow">Eyebrow</content-line>
+          <content-line style-class="title">HEADER</content-line>
+          <content-line style-class="subtitle">Subtitle</content-line>
+          <content-line style-class="body">Body</content-line>
+          <div>
+            <content-button href="google.com">Test Button</content-button>
+            <content-button>Test Button</content-button>
+          </div>
+          <content-line>DISCLOSURE text example is placed here</content-line>
+        </content-text-block>
+      </content-hero-block>
+      
+    </content-block-formatter>
+
+    <content-block-formatter>
+      <content-text-block slot="header">
+        <content-line>Content Grid with Content Block Image and Content Block Tout</content-line>
+      </content-text-block>
+    </content-block-formatter>
+
+    <content-grid-formatter type="flex" flex-grow="true" flex-align="flex-start" columns-tablet-portrait="2" columns-tablet-landscape="3" columns-desktop="4">
+        <content-image alt="Test Alt Text" src="https://images.unsplash.com/photo-1612873649383-edf91f1cf7fe?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80"></content-image>
+        <content-image alt="Test Alt Text" src="https://images.unsplash.com/photo-1612873649383-edf91f1cf7fe?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80"></content-image>
+        <content-image alt="Test Alt Text" src="https://images.unsplash.com/photo-1612873649383-edf91f1cf7fe?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80"></content-image>
+
+        <content-tout-block>
+          <content-image slot="media" alt="Test Alt Text" src="https://images.unsplash.com/photo-1612873649383-edf91f1cf7fe?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80"></content-image>
+          <content-text-block slot="mediaContent" text-align="right">
+            <content-line style-class="eyebrow">EYEBROW</content-line>
+            <content-line style-class="header">HEADER</content-line>
+            <content-line style-class="subtitle">Subtitle</content-line>
+            <div>
+              <content-button href="google.com">Test Button</content-button>
+              <content-button>Test Button</content-button>
+            </div>
+          </content-text-block>      
+          <content-text-block>
+            <content-line style-class="eyebrow">EYEBROW</content-line>
+            <content-line style-class="header">HEADER</content-line>
+            <content-line style-class="subtitle">Subtitle</content-line>
+            <content-line>Body</content-line>
+            <div>
+              <content-button href="google.com">Test Button</content-button>
+              <content-button>Test Button</content-button>
+            </div>
+            <content-line>DISCLOSURE text example is placed here</content-line>
+          </content-text-block>      
+        </content-tout-block>
+    </content-grid-formatter>
+
+    <content-video width="640" height="190" src="https://www.youtube.com/watch?v=XwwNwyQT8Dc"></content-video>
+
+  </body>
+</html>

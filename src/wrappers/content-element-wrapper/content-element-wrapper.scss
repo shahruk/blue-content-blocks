@@ -1,0 +1,14 @@
+content-element-wrapper {
+  display: block;
+}
+
+.content-max-width-mobile {
+  @media #{$mobile-only} {
+    @include allPercentRules('max-width');
+  }
+}
+.content-max-width {
+  @media #{$tablet-portrait-up} {
+    @include allPercentRules('max-width');
+  }
+}

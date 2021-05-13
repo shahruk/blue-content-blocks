@@ -1,0 +1,14 @@
+content-split-block {
+  display: block;
+}
+
+content-split-block {
+  .content-split-block--reverse {
+    @media #{$tablet-portrait-up} {
+      .content-grid-formatter-flex > :first-child,
+      .content-grid-formatter-grid > :first-child {
+        order: 2;
+      }
+    }
+  }
+}

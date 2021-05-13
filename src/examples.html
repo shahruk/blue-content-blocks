@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <meta name="description" content="Web components designed for building reusable modules for websites at scale." />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/content-blocks.esm.js"></script>
+    <script nomodule src="/build/content-blocks.js"></script>
+  </head>
+  <body>
+    <style>
+      content-text content-element-wrapper {
+        background: red;
+      }
+
+      content-element-wrapper {
+        background: green;
+      }
+
+      .test-class {
+        border: 10px solid blue;
+      }
+
+      .content-text {
+        background: grey;
+      }
+    </style>
+
+<img src="https://via.placeholder.com/1350x150" alt="Alt text goes here" />
+<content-hero-block>
+  <content-image slot="media" src="https://via.placeholder.com/350x150" alt="Alt text goes here"></content-image>
+
+  <content-text-block slot="content">
+    <content-line slot="disclosure" style-class="test-class">Hello World!</content-line>
+    <content-line slot="eyebrow" style-class="test-class">Hello World!</content-line>
+        <content-line slot="title" style-class="test-class">Hello World!</content-line>
+        <content-line slot="subtitle" style-class="test-class">Hello World!</content-line>
+        <content-line slot="body" style-class="test-class">Hello World!</content-line>
+        <div slot="cta">
+          <content-button href="google.com">
+            Hello
+          </content-button>
+          <content-button>
+            Hello
+          </content-button>
+        </div>
+      </content-text-block>
+    </content-hero-block>
+    
+    <content-video></content-video>
+  </body>
+</html>
